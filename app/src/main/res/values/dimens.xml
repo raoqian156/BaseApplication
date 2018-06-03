@@ -1,0 +1,11 @@
+<resources>
+    <!--主页底部文字大小-->
+    <dimen name="main_tab_text_size">16sp</dimen>
+    <!--主页底部高度-->
+    <dimen name="main_tab_height">50dp</dimen>
+    <!--底部数目圆直径-->
+    <dimen name="main_tab_dot_size">15dp</dimen>
+    <!--底部数目字大小-->
+    <dimen name="main_tab_dot_text_size">10sp</dimen>
+    <dimen name="common_title_height">40dp</dimen>
+</resources>

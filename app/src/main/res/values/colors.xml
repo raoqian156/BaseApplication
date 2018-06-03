@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--与BaseActivity.MAIN_COLOR绑定-->
+    <color name="colorPrimary">#ff0011</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="main_tab_text_select_color">#55b737</color>
+    <color name="main_tab_text_unselect_color">#999999</color>
+</resources>

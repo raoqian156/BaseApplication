@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MobProSaleApplication</string>
+
+    <string name="text_login">登录</string>
+    <string name="text_search">搜索</string>
+
+
+    <string name="title_activity_bottom_tab">Sign in</string>
+    <string name="tip_main_tab1">首页</string>
+    <string name="tip_main_tab2">资讯</string>
+    <string name="tip_main_tab3">购物车</string>
+    <string name="tip_main_tab4">我的</string>
+</resources>

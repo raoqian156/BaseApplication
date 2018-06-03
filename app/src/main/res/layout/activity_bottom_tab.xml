@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?><!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:tools="http://schemas.android.com/tools"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent">-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentPanel666"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:minHeight="400dp" />
+
+    <!--<View style="@style/HorizontalLine" />-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#333" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_tab_height"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/activity_tab1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/selector_drawable_main_tab1"
+            android:gravity="center"
+            android:text="@string/tip_main_tab1"
+            android:textColor="@drawable/selector_color_text_main_tab"
+            android:textSize="@dimen/main_tab_text_size" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/activity_tab2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/selector_drawable_main_tab2"
+                android:gravity="center"
+                android:text="@string/tip_main_tab2"
+                android:textColor="@drawable/selector_color_text_main_tab"
+                android:textSize="@dimen/main_tab_text_size" />
+
+            <TextView
+                android:id="@+id/unread_msg_number"
+                android:layout_width="@dimen/main_tab_dot_size"
+                android:layout_height="@dimen/main_tab_dot_size"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/shape_circle_red_solid"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="1"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/main_tab_dot_text_size"
+                android:visibility="gone"
+                tools:visibility="visible" />
+        </FrameLayout>
+
+
+        <TextView
+            android:id="@+id/activity_tab3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/selector_drawable_main_tab3"
+            android:gravity="center"
+            android:text="@string/tip_main_tab3"
+            android:textColor="@drawable/selector_color_text_main_tab"
+            android:textSize="@dimen/main_tab_text_size" />
+
+        <TextView
+            android:id="@+id/activity_tab4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/selector_drawable_main_tab4"
+            android:gravity="center"
+            android:text="@string/tip_main_tab4"
+            android:textColor="@drawable/selector_color_text_main_tab"
+            android:textSize="@dimen/main_tab_text_size" />
+
+    </LinearLayout>
+</LinearLayout><!--</ScrollView>-->

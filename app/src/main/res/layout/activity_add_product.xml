@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:focusable="true"-->
+    <!--android:focusableInTouchMode="true">-->
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:visibility="gone"
+            android:background="#000" />
+
+        <TextView
+            style="@style/RemindText"
+            android:paddingTop="10dp"
+            android:visibility="gone"
+            android:text="*商品名称" />
+
+        <EditText
+            style="@style/RemindInput"
+            android:visibility="gone"
+            android:hint="请输入商品名称" />
+
+        <TextView
+            style="@style/RemindText"
+            android:visibility="gone"
+            android:text="*商品描述" />
+
+        <EditText
+            style="@style/RemindInput"
+            android:visibility="gone"
+            android:hint="请输入商品描述" />
+
+        <TextView
+            style="@style/RemindText"
+            android:visibility="gone"
+            android:text="*商品一级分类" />
+
+        <EditText
+            style="@style/RemindInput"
+            android:visibility="gone"
+            android:hint="请选择一级分类" />
+
+        <TextView
+            style="@style/RemindText"
+            android:visibility="gone"
+            android:text="商品二级分类" />
+
+        <EditText
+            style="@style/RemindInput"
+            android:visibility="gone"
+            android:hint="请选择二级分类" />
+
+        <TextView
+            style="@style/RemindText"
+            android:visibility="gone"
+            android:text="展示图片列表" />
+
+        <TextView
+            style="@style/RemindText"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="横划图片列表,可添加" />
+
+        <TextView
+            style="@style/RemindText"
+            android:text="商品详情" />
+
+        <EditText
+            style="@style/RemindInput"
+            android:hint="本区域为图文混排区域,样式待定" />
+
+        <TextView
+            style="@style/RemindText"
+            android:text="可选商品规格" />
+
+        <EditText
+            style="@style/RemindInput"
+            android:hint="如:''颜色,大小,尺寸''" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sure"
+            android:text="确定规格" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="addData"
+            android:text="增加不同规格产品" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+<!--</ScrollView>-->
