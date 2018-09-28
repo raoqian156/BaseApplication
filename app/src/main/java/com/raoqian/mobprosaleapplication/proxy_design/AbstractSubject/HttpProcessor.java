@@ -15,17 +15,20 @@ public abstract class HttpProcessor {
 
     private Handler mHandler = new Handler(Looper.getMainLooper());
 
-    protected  void refuseView(long total, long sum, HttpProgressListener listener) {
-        mHandler.post(() -> listener.onProgress(sum, total));
+    protected void refuseView(long total, long sum, HttpProgressListener listener) {
+        if (listener != null)
+            mHandler.post(() -> listener.onProgress(sum, total));
     }
 
-    protected <CALL extends HttpCallBackImpl> void backOnFail(String url,String reason, CALL listener) {
-        mHandler.post(() -> listener.onFail(url,reason));
+    protected <CALL extends HttpCallBackImpl> void backOnFail(String url, String reason, CALL listener) {
+        if (listener != null)
+            mHandler.post(() -> listener.onFail(url, reason));
     }
 
-    protected <CALL extends HttpCallBackImpl> void backOnSuccess(String url,String content, CALL listener) {
-        Log.e("HttpProcessor", "content = "+content);
-        mHandler.post(() -> listener.onSuccess(url,content,System.currentTimeMillis()));
+    protected <CALL extends HttpCallBackImpl> void backOnSuccess(String url, String content, CALL listener) {
+        Log.e("HttpProcessor", "content = " + content);
+        if (listener != null)
+            mHandler.post(() -> listener.onSuccess(url, content, System.currentTimeMillis()));
     }
 
     // http 协议的四种动作 get post put delete

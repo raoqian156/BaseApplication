@@ -71,7 +71,8 @@ public class HttpUtils {
 
             @Override
             public void onSuccess(Object o) {
-                callBacker.onSuccess(o);
+                if (callBacker != null)
+                    callBacker.onSuccess(o);
             }
 
             @Override

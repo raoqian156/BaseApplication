@@ -21,7 +21,7 @@
         <!--</activity>-->
         <activity android:name=".MainActivityCopy" />
         <activity
-            android:name=".BottomTabActivity"
+            android:name=".StoreProductAdd"
             android:theme="@style/Fullscreen"
             android:windowSoftInputMode="adjustNothing">
             <intent-filter>

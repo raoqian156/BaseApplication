@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class BaseHolder extends RecyclerView.ViewHolder {
     private View mView;
-    private SparseArray<View> sparseArray = new SparseArray();
+    private SparseArray<View> sparseArray = new SparseArray<>();
     private int[] keepEditContent;
 
     public BaseHolder(View itemView) {

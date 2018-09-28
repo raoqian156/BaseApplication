@@ -30,7 +30,7 @@ public class StoreProductAdd extends Activity {
     }
 
     RecyclerView recyclerView;
-    SpecAdapter mAdapter;
+    SpecAdapter2 mAdapter;
 
     private void initRecycler1() {
         recyclerView = findViewById(R.id.recycler);
@@ -44,7 +44,7 @@ public class StoreProductAdd extends Activity {
         };
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(llm);
-        mAdapter = new SpecAdapter(StoreProductAdd.this);
+        mAdapter = new SpecAdapter2(StoreProductAdd.this, R.layout.item_spec_input, ExampleHolder2.class);
         recyclerView.setAdapter(mAdapter);
 //解决数据加载不完的问题
         recyclerView.setNestedScrollingEnabled(false);
@@ -61,21 +61,22 @@ public class StoreProductAdd extends Activity {
         data.add("高度");
         data.add("宽度");
         data.add("广度");
+        data.add("尺寸");
+        data.add("大小");
+        data.add("高度");
+        data.add("宽度");
+        data.add("广度");
         mAdapter.setData(data);
     }
 
     public void addData(View view) {
-        mAdapter.clearFocus();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    sleep(100);
-                    TLog.bean("StoreProductAdd", mAdapter.getInputData().toString());
-                    Log.e("StoreProductAdd", mAdapter.getInputData().toString());
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        new Thread(() -> {
+            try {
+                sleep(100);
+                TLog.bean("StoreProductAdd", mAdapter.getInputData().toString());
+                Log.e("StoreProductAdd", mAdapter.getInputData().toString());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }).start();
 //        mAdapter.getInputData();
