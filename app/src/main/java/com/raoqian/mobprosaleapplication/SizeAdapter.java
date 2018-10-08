@@ -88,7 +88,7 @@ public class SizeAdapter extends BaseAdapter<SizeAdapter.SizeItemHolder, String>
         }
 
         public void setData(List<ItemSpec> data) {
-            Log.e("StoreProductAdd.LINE", "105data = " + data.size());
+            Log.e("TestActivity.LINE", "105data = " + data.size());
             itemAdapter.setData(data);
         }
     }
@@ -111,7 +111,7 @@ public class SizeAdapter extends BaseAdapter<SizeAdapter.SizeItemHolder, String>
         }
 
         private void setInputContent(int position, String remind, String content) {
-            Log.e("StoreProductAdd", "position = " + position + " remind = " + remind + " content = " + content);
+            Log.e("TestActivity", "position = " + position + " remind = " + remind + " content = " + content);
         }
 
 

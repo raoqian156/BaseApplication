@@ -1,13 +1,12 @@
 package com.raoqian.mobprosaleapplication.base.recycler;
 
+import android.support.annotation.IdRes;
+import android.support.annotation.UiThread;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.TextView;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by raoqian on 2018/9/21.
@@ -22,14 +21,18 @@ public class BaseViewHolder<DATA> extends ViewHolder {
 
     private SparseArray<View> itemViews = new SparseArray<>();
 
+    /**
+     * 为了保证代码的后期维护，该方法必须重写 且必须与Adapter 初始化描述一致
+     */
     public int inflateLayoutId() {//不参与诗句逻辑，只作为调试方法，方便维护
         return 0;
     }
 
+
     public void fillData(DATA data) {
     }
 
-    public void fillData2(Object data) {
+    public void fillObject(Object data) {
     }
 
     public <T extends View> T getView(int id) {
@@ -41,7 +44,8 @@ public class BaseViewHolder<DATA> extends ViewHolder {
         }
     }
 
-    protected void setTextToView(String text, int textViewId) {
+    @UiThread
+    protected void setTextToView(String text, @IdRes int textViewId) {
         if (getView(textViewId) != null) {
             ((TextView) getView(textViewId)).setText(text);
         } else if (itemView.findViewById(textViewId) instanceof TextView) {
@@ -52,7 +56,7 @@ public class BaseViewHolder<DATA> extends ViewHolder {
         }
     }
 
-    protected String getTextFromView(int textViewId) {
+    protected String getTextFromView(@IdRes int textViewId) {
         if (itemViews.get(textViewId) != null) {
             return ((TextView) getView(textViewId)).getText().toString();
         } else if (itemView.findViewById(textViewId) instanceof TextView) {
@@ -69,49 +73,13 @@ public class BaseViewHolder<DATA> extends ViewHolder {
     }
 
 
-    /**
-     * #############################################################
-     * RecyclerView 刷新不会保存Editext原有内容,需要在此确认需要保存,
-     * #############################################################
-     */
-
-    protected void setKeeper(OnContentKeeper onContentKeeper, int... ids) {
-        this.saveContentIds = ids;
-        this.mOnContentKeeper = onContentKeeper;
+    public int getMPosition() {
+        return (int) itemView.getTag();
     }
-
-    public boolean needSave() {
-        return mOnContentKeeper != null && saveContentIds != null && saveContentIds.length > 0;
-    }
-
-    public void setCash() {//存储数据
-        for (int saveContentId : saveContentIds) {
-            if (mOnContentKeeper == null) {
-                contentCash.put(getPosition() + "" + saveContentId, getTextFromView(saveContentId));
-            } else {
-                contentCash.put(getPosition() + "" + saveContentId, mOnContentKeeper.onSave(this, saveContentId));
-            }
-        }
-    }
-
-    public void useCash() {//使用存储数据填充视图
-        for (int saveContentId : saveContentIds) {
-            if (mOnContentKeeper == null) {
-                setTextToView((String) contentCash.get(getPosition() + "" + saveContentId), saveContentId);
-            } else {
-                Object value = contentCash.get(getPosition() + "" + saveContentId);
-                if (value != null) mOnContentKeeper.onRelease(this, value, saveContentId);
-            }
-        }
-    }
-
-    private OnContentKeeper mOnContentKeeper;
-    private Map<String, Object> contentCash = new HashMap<>();
-    private int[] saveContentIds;
 
     /**
      * #############################################################
-     * RecyclerView 刷新不会保存Editext原有内容,需要在此确认需要保存,
+     * RecyclerView 刷新保存Editext等内容会有错误
      *#############################################################
      */
 }

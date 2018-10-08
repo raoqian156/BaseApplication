@@ -1,4 +1,4 @@
-package com.raoqian.mobprosaleapplication;
+package com.raoqian.mobprosaleapplication.base;
 
 import android.content.Context;
 import android.util.Log;
@@ -16,9 +16,9 @@ import java.util.List;
  * Created by Administrator on 2018/5/28.
  */
 
-public class SpecAdapter2 extends BaseRecyclerAdapter<String, ExampleHolder2> implements View.OnFocusChangeListener {
+public class TestAdapter extends BaseRecyclerAdapter<String, TestHolder> implements View.OnFocusChangeListener {
 
-    public SpecAdapter2(Context context, int itemLayoutId, Class<? extends BaseViewHolder> baseViewHolderClass) {
+    public TestAdapter(Context context, int itemLayoutId, Class<? extends BaseViewHolder> baseViewHolderClass) {
         super(context, itemLayoutId, baseViewHolderClass);
     }
 
