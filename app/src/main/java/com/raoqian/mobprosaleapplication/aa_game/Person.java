@@ -21,7 +21,7 @@ public class Person implements HumanParam {
     int YZ;      //颜值Y
     int MJ;      //敏捷M
     ZhuangBei zhuangBei = new ZhuangBei("随机装备");
-    WuQi wuQi = new WuQi("随机武器");
+    WuQiOld wuQiOld = new WuQiOld("随机武器");
     private double baojiCanShu = 2D;//暴击参数
     private double fanjiCanShu = 2D;//反击参数
     private int lastHurt = 0;
@@ -110,10 +110,10 @@ public class Person implements HumanParam {
 //        this.zhuangBei = zhuangBei;
 //    }
 //
-//    public void setWuQi(WuQi wuQi) {
-////        this.wuQi.create(wuQi);
-//        TLog.bean("Person", wuQi);
-//        this.wuQi = wuQi;
+//    public void setWuQiOld(WuQiOld wuQiOld) {
+////        this.wuQiOld.create(wuQiOld);
+//        TLog.bean("Person", wuQiOld);
+//        this.wuQiOld = wuQiOld;
 //    }
 
     public String setHurtIn(int value) {//受到伤害
@@ -134,32 +134,32 @@ public class Person implements HumanParam {
 
     @Override
     public int getSM() {
-        return SM;// + zhuangBei.getSM() + wuQi.getSM();
+        return SM;// + zhuangBei.getSM() + wuQiOld.getSM();
     }
 
     @Override
     public int getGJ() {
-        return GJ;// + zhuangBei.getGJ() + wuQi.getGJ();
+        return GJ;// + zhuangBei.getGJ() + wuQiOld.getGJ();
     }
 
     @Override
     public int getFY() {
-        return FY;// + zhuangBei.getFY() + wuQi.getFY();
+        return FY;// + zhuangBei.getFY() + wuQiOld.getFY();
     }
 
     @Override
     public int getZL() {
-        return ZL;// + zhuangBei.getZL() + wuQi.getZL();
+        return ZL;// + zhuangBei.getZL() + wuQiOld.getZL();
     }
 
     @Override
     public int getYZ() {
-        return YZ;//+ zhuangBei.getYZ() + wuQi.getYZ();
+        return YZ;//+ zhuangBei.getYZ() + wuQiOld.getYZ();
     }
 
     @Override
     public int getMJ() {
-        return MJ;//+ zhuangBei.getMJ() + wuQi.getMJ();
+        return MJ;//+ zhuangBei.getMJ() + wuQiOld.getMJ();
     }
 
     /**

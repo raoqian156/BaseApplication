@@ -5,7 +5,7 @@ import android.widget.TextView;
 
 import com.raoqian.mobprosaleapplication.R;
 import com.raoqian.mobprosaleapplication.aa_game.Person;
-import com.raoqian.mobprosaleapplication.aa_game.WuQi;
+import com.raoqian.mobprosaleapplication.aa_game.WuQiOld;
 import com.raoqian.mobprosaleapplication.aa_game.ZhuangBei;
 import com.raoqian.mobprosaleapplication.base.BaseFragment;
 
@@ -15,7 +15,7 @@ import com.raoqian.mobprosaleapplication.base.BaseFragment;
  */
 
 public class GameSettingFragment extends BaseFragment {
-    WuQi wuQi;
+    WuQiOld wuQiOld;
     ZhuangBei zhuangBei;
     Person person1;
     Person person2;
@@ -33,12 +33,12 @@ public class GameSettingFragment extends BaseFragment {
     }
 
     private void createPerson() {
-        if (this.wuQi == null || this.zhuangBei == null) return;
+        if (this.wuQiOld == null || this.zhuangBei == null) return;
         this.person1 = new Person(1);
         this.person2 = new Person(2);
-//        this.person1.setWuQi(this.wuQi);
+//        this.person1.setWuQiOld(this.wuQiOld);
 //        this.person1.setZhuangBei(this.zhuangBei);
-//        this.person2.setWuQi(this.wuQi);
+//        this.person2.setWuQiOld(this.wuQiOld);
 //        this.person2.setZhuangBei(this.zhuangBei);
         info.setText(person1.toString() + "\n\n" + person2.toString());
     }
@@ -57,8 +57,8 @@ public class GameSettingFragment extends BaseFragment {
         return person2;
     }
 
-    public void setWuQi(WuQi wuQi) {
-        this.wuQi = wuQi;
+    public void setWuQiOld(WuQiOld wuQiOld) {
+        this.wuQiOld = wuQiOld;
         createPerson();
     }
 

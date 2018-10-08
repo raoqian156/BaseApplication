@@ -77,10 +77,10 @@ public class GameMainActivity extends BaseActivity implements View.OnClickListen
     MyViewPagerAdapter mAdapter;
 
     public void createPerson(View view) {
-        WuQi wuQi = mGameBaseFragment.getmWuQi();
+        WuQiOld wuQiOld = mGameBaseFragment.getmWuQiOld();
         ZhuangBei zhuangBei = mGameBaseFragment.getmZhuangBei();
 
-        mGameSettingFragment.setWuQi(wuQi);
+        mGameSettingFragment.setWuQiOld(wuQiOld);
         mGameSettingFragment.setZhuangBei(zhuangBei);
 
         mGameMainFragment.setPerson1(mGameSettingFragment.getPerson1());

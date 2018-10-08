@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.raoqian.mobprosaleapplication.R;
-import com.raoqian.mobprosaleapplication.aa_game.WuQi;
+import com.raoqian.mobprosaleapplication.aa_game.WuQiOld;
 import com.raoqian.mobprosaleapplication.aa_game.ZhuangBei;
 import com.raoqian.mobprosaleapplication.base.BaseFragment;
 import com.raoqian.mobprosaleapplication.utils.TLog;
@@ -18,7 +18,7 @@ import com.raoqian.mobprosaleapplication.utils.TLog;
 public class GameBaseFragment extends BaseFragment {
 
     ZhuangBei mZhuangBei = new ZhuangBei("随机装备");
-    WuQi mWuQi = new WuQi("随机武器");
+    WuQiOld mWuQiOld = new WuQiOld("随机武器");
 
     int wuqi_shenMing;
     int wuqi_gongJi;
@@ -64,21 +64,21 @@ public class GameBaseFragment extends BaseFragment {
         return mZhuangBei;
     }
 
-    public WuQi getmWuQi() {
+    public WuQiOld getmWuQiOld() {
         wuqi_shenMing = getValue(R.id.wuqi_shenMing);
         wuqi_gongJi = getValue(R.id.wuqi_gongJi);
         wuqi_fangYu = getValue(R.id.wuqi_fangYu);
         wuqi_zhiLi = getValue(R.id.wuqi_zhiLi);
         wuqi_yanZhi = getValue(R.id.wuqi_yanZhi);
         wuqi_minJie = getValue(R.id.wuqi_minJie);
-        mWuQi.setShenMing(wuqi_shenMing);
-        mWuQi.setGongJi(wuqi_gongJi);
-        mWuQi.setFangYu(wuqi_fangYu);
-        mWuQi.setZhiLi(wuqi_zhiLi);
-        mWuQi.setYanZhi(wuqi_yanZhi);
-        mWuQi.setMinJie(wuqi_minJie);
-        TLog.bean("GameBaseFragment", mWuQi);
-        return mWuQi;
+        mWuQiOld.setShenMing(wuqi_shenMing);
+        mWuQiOld.setGongJi(wuqi_gongJi);
+        mWuQiOld.setFangYu(wuqi_fangYu);
+        mWuQiOld.setZhiLi(wuqi_zhiLi);
+        mWuQiOld.setYanZhi(wuqi_yanZhi);
+        mWuQiOld.setMinJie(wuqi_minJie);
+        TLog.bean("GameBaseFragment", mWuQiOld);
+        return mWuQiOld;
     }
 
     private int getValue(int id) {

@@ -1,12 +1,13 @@
 package com.raoqian.mobprosaleapplication.aa_game;
 
+
 import android.util.Log;
 
 /**
  * Created by raoqian on 2018/9/30.
  */
 
-public class ZhuangBei implements HumanParam {
+public class WuQiOld implements HumanParam {
 
     public static int SM_MAX = 10;
     public static int GJ_MAX = 10;
@@ -17,9 +18,11 @@ public class ZhuangBei implements HumanParam {
 
 
     public enum TYPE {
-        FANG       //【防具】20%抵消全部一次伤害后，装备被破坏
-        , SHIP     //【饰品】
-        , FUJI     //【附件】
+        JIAN       //剑 - 【普通攻击】有40%的几率引发{流血}
+        , TOUZ     //投掷物 -【普通攻击】将不会被引发【反击】【招架】  
+        , DUNQ     //钝器 - 【普通攻击】有25%几率引发{晕眩}
+        , JIXI     //枪械 -  【普通攻击】不会引发【反击】【招架】有40%几率{洞穿}
+        , FAZH     //法杖 -  增加所有技能发动机率5%
     }
 
     String name = "";
@@ -32,12 +35,11 @@ public class ZhuangBei implements HumanParam {
     private double skillAdd = 0;
     private TYPE mTYPE = null;
 
-    public ZhuangBei(String name) {
+    public WuQiOld(String name) {
         this.name = name;
-        createRandomParam();
     }
 
-    public ZhuangBei(String name, TYPE type, int sm, int gj, int fy, int zl, int yz, int mj) {
+    public WuQiOld(String name, TYPE type, int sm, int gj, int fy, int zl, int yz, int mj) {
         this.name = name;
         this.mTYPE = type;
         this.sm = sm;
@@ -55,7 +57,7 @@ public class ZhuangBei implements HumanParam {
         this.zl = (int) (ZL_MAX * Math.random());
         this.yz = (int) (YZ_MAX * Math.random());
         this.mj = (int) (MJ_MAX * Math.random());
-        Log.e("ZhuangBei", "生成武器：" + toString());
+        Log.e("WuQiOld", "重新生成武器：" + toString());
     }
 
     public String getName() {
