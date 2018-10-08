@@ -1,7 +1,6 @@
 package com.raoqian.mobprosaleapplication.base;
 
 import android.app.ProgressDialog;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,18 +8,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.raoqian.mobprosaleapplication.base.BaseActivity.MAIN_COLOR_BLUE;
-import static com.raoqian.mobprosaleapplication.base.BaseActivity.MAIN_COLOR_GREEN;
-import static com.raoqian.mobprosaleapplication.base.BaseActivity.MAIN_COLOR_RED;
 import static com.raoqian.mobprosaleapplication.base.BaseActivity.getMain;
-import static com.raoqian.mobprosaleapplication.base.BaseApplication.BASE_STATUS_BAR_HEIGHT;
 
 /**
  * Created by raoqian on 2017/3/24.
@@ -52,37 +44,36 @@ public abstract class BaseFragment extends Fragment implements FragmentUserVisib
      * @param ids    相对状态栏需要下移的原ViewID
      */
     protected void setNeedMoveToBottomViewId(View parent, int... ids) {
-        if (ids == null || ids.length == 0) {
-            return;
-        }
-        viewStatus = new View(getContext());
-        viewStatus.setBackgroundColor(Color.argb(255, MAIN_COLOR_RED, MAIN_COLOR_GREEN, MAIN_COLOR_BLUE));
-        if (parent instanceof LinearLayout) {
-            LinearLayout.LayoutParams statusParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, BASE_STATUS_BAR_HEIGHT);
-            ((LinearLayout) parent.findViewById(ids[0]).getParent()).addView(viewStatus, 0, statusParam);
-        } else if (parent instanceof FrameLayout) {
-            FrameLayout.LayoutParams statusParam = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, BASE_STATUS_BAR_HEIGHT);
-            ((FrameLayout) parent).addView(viewStatus, statusParam);
-            for (int id : ids) {
-                FrameLayout.LayoutParams flp = (FrameLayout.LayoutParams) parent.findViewById(id).getLayoutParams();
-                int oldMT = flp.topMargin;
-                flp.setMargins(0, BASE_STATUS_BAR_HEIGHT + oldMT, 0, 0);
-            }
-
-        } else if (parent instanceof RelativeLayout) {
-            RelativeLayout.LayoutParams statusParam = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, BASE_STATUS_BAR_HEIGHT);
-            ((RelativeLayout) parent).addView(viewStatus, statusParam);
-            for (int id : ids) {
-                RelativeLayout.LayoutParams flp = (RelativeLayout.LayoutParams) parent.findViewById(id).getLayoutParams();
-                int[] ruls = flp.getRules();
-                if (ruls[RelativeLayout.BELOW] > 0 || ruls[RelativeLayout.ALIGN_PARENT_BOTTOM] > 0) {
-                } else {
-                    int oldMT = flp.topMargin;
-                    flp.setMargins(0, BASE_STATUS_BAR_HEIGHT + oldMT, 0, 0);
-                }
-            }
-        }
-
+//        if (ids == null || ids.length == 0) {
+//            return;
+//        }
+//        viewStatus = new View(getContext());
+//        viewStatus.setBackgroundColor(Color.argb(255, MAIN_COLOR_RED, MAIN_COLOR_GREEN, MAIN_COLOR_BLUE));
+//        if (parent instanceof LinearLayout) {
+//            LinearLayout.LayoutParams statusParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, BASE_STATUS_BAR_HEIGHT);
+//            ((LinearLayout) parent.findViewById(ids[0]).getParent()).addView(viewStatus, 0, statusParam);
+//        } else if (parent instanceof FrameLayout) {
+//            FrameLayout.LayoutParams statusParam = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, BASE_STATUS_BAR_HEIGHT);
+//            ((FrameLayout) parent).addView(viewStatus, statusParam);
+//            for (int id : ids) {
+//                FrameLayout.LayoutParams flp = (FrameLayout.LayoutParams) parent.findViewById(id).getLayoutParams();
+//                int oldMT = flp.topMargin;
+//                flp.setMargins(0, BASE_STATUS_BAR_HEIGHT + oldMT, 0, 0);
+//            }
+//
+//        } else if (parent instanceof RelativeLayout) {
+//            RelativeLayout.LayoutParams statusParam = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, BASE_STATUS_BAR_HEIGHT);
+//            ((RelativeLayout) parent).addView(viewStatus, statusParam);
+//            for (int id : ids) {
+//                RelativeLayout.LayoutParams flp = (RelativeLayout.LayoutParams) parent.findViewById(id).getLayoutParams();
+//                int[] ruls = flp.getRules();
+//                if (ruls[RelativeLayout.BELOW] > 0 || ruls[RelativeLayout.ALIGN_PARENT_BOTTOM] > 0) {
+//                } else {
+//                    int oldMT = flp.topMargin;
+//                    flp.setMargins(0, BASE_STATUS_BAR_HEIGHT + oldMT, 0, 0);
+//                }
+//            }
+//        }
     }
 
     @Nullable
