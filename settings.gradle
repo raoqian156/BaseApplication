@@ -1,1 +1,1 @@
-include ':app', ':rollpagerviewsupport'
+include ':app', ':rollpagerviewsupport', ':test'

@@ -1,123 +1,82 @@
 package com.raoqian.mobprosaleapplication.aa_game;
 
-
-import android.util.Log;
-
 /**
- * Created by raoqian on 2018/9/30.
+ * Created by raoqian on 2018/10/9.
  */
 
-public class WuQi implements HumanParam {
-    public static int SHENMING_MAX = 10;
-    public static int GONGJI_MAX = 10;
-    public static int FANGYU_MAX = 0;
-    public static int ZHILI_MAX = 5;
-    public static int YANZHI_MAX = 5;
-    public static int MINJIE_MAX = 5;
+public class WUQI implements StatusBuffer, HumanParam {
     String name = "";
-    int shenMing = 0;
-    int gongJi = 0;
-    int fangYu = 0;
-    int zhiLi = 0;
-    int yanZhi = 0;
-    int minJie = 0;
+    int TZ = 0;
+    int SM = 0;
+    int GJ = 0;
+    int FY = 0;
+    int ZL = 0;
+    int YZ = 0;
+    int MJ = 0;
+  double smAddBeforeStart=0;
+  double         gjAddBeforeStart=0;
+  double fyAddBeforeStart=0;
+  double         zlAddBeforeStart=0;
+  double yzAddBeforeStart=0;
+  double         mjAddBeforeStart=0;
 
-    public WuQi(String name) {
+    double smChangeBeforeStart=1;
+    double gjChangeBeforeStart=1;
+    double fyChangeBeforeStart=1;
+    double zlChangeBeforeStart=1;
+    double yzChangeBeforeStart=1;
+    double mjChangeBeforeStart=1;
+
+    double XYRate=0;
+    double JGRate=0;
+    double CLRate=0;
+    double LXRate=0;
+    double NFRate=0;
+    double NZRate=0;
+    double DCRate=0;
+    double AARate=0;
+
+
+    public void setSM(int SM) {this.SM = SM;}
+    public void setGJ(int GJ) {this.GJ = GJ;}
+    public void setFY(int FY) {this.FY = FY;}
+    public void setZL(int ZL) {this.ZL = ZL;}
+    public void setYZ(int YZ) {this.YZ = YZ;}
+    public void setMJ(int MJ) {this.MJ = MJ;}
+
+    public void setName(String name) {
         this.name = name;
-        this.shenMing = (int) (SHENMING_MAX * Math.random());
-        this.gongJi = (int) (GONGJI_MAX * Math.random());
-        this.fangYu = (int) (FANGYU_MAX * Math.random());
-        this.zhiLi = (int) (ZHILI_MAX * Math.random());
-        this.yanZhi = (int) (YANZHI_MAX * Math.random());
-        this.minJie = (int) (MINJIE_MAX * Math.random());
     }
 
-    public void create(WuQi wuQi) {
-        if (wuQi == null) return;
-        this.name = wuQi.getName();
-        this.shenMing = (int) (wuQi.getSM() * Math.random());
-        this.gongJi = (int) (wuQi.getGJ() * Math.random());
-        this.fangYu = (int) (wuQi.getFY() * Math.random());
-        this.zhiLi = (int) (wuQi.getZL() * Math.random());
-        this.yanZhi = (int) (wuQi.getYZ() * Math.random());
-        this.minJie = (int) (wuQi.getMJ() * Math.random());
-        Log.e("WuQi", "重新生成武器：" + toString());
-    }
+    @Override public int getTZ() {return TZ;}
+    @Override public int getSM() {return SM;}
+    @Override public int getGJ() {return GJ;}
+    @Override public int getFY() {return FY;}
+    @Override public int getZL() {return ZL;}
+    @Override public int getYZ() {return YZ;}
+    @Override public int getMJ() {return MJ;}
 
-    public String getName() {
-        return name;
-    }
+    @Override public double smChangeBeforeStart() {return  smChangeBeforeStart;}
+    @Override public double gjChangeBeforeStart() {return  gjChangeBeforeStart;}
+    @Override public double fyChangeBeforeStart() {return  fyChangeBeforeStart;}
+    @Override public double zlChangeBeforeStart() {return  zlChangeBeforeStart;}
+    @Override public double yzChangeBeforeStart() {return  yzChangeBeforeStart;}
+    @Override public double mjChangeBeforeStart() {return  mjChangeBeforeStart;}
 
-    public void setShenMing(int shenMing) {
-        this.shenMing = shenMing;
-    }
+    @Override public double smAddBeforeStart() {return smAddBeforeStart;}
+    @Override public double gjAddBeforeStart() {return gjAddBeforeStart;}
+    @Override public double fyAddBeforeStart() {return fyAddBeforeStart;}
+    @Override public double zlAddBeforeStart() {return zlAddBeforeStart;}
+    @Override public double yzAddBeforeStart() {return yzAddBeforeStart;}
+    @Override public double mjAddBeforeStart() {return mjAddBeforeStart;}
 
-    public void setGongJi(int gongJi) {
-        this.gongJi = gongJi;
-    }
-
-    public void setFangYu(int fangYu) {
-        this.fangYu = fangYu;
-    }
-
-    public void setZhiLi(int zhiLi) {
-        this.zhiLi = zhiLi;
-    }
-
-    public void setYanZhi(int yanZhi) {
-        this.yanZhi = yanZhi;
-    }
-
-    public void setMinJie(int minJie) {
-        this.minJie = minJie;
-    }
-
-    @Override
-    public int getTZ() {
-        return 0;
-    }
-
-    @Override
-    public int getSM() {
-        return shenMing;
-    }
-
-    @Override
-    public int getGJ() {
-        return gongJi;
-    }
-
-    @Override
-    public int getFY() {
-        return fangYu;
-    }
-
-    @Override
-    public int getZL() {
-        return zhiLi;
-    }
-
-    @Override
-    public int getYZ() {
-        return yanZhi;
-    }
-
-    @Override
-    public int getMJ() {
-        return minJie;
-    }
-
-    @Override
-    public String toString() {
-        return "ZhuangBei{" +
-                "name='" + name + '\'' +
-                ", SM=" + shenMing +
-                ", GJ=" + gongJi +
-                ", FY=" + fangYu +
-                ", ZL=" + zhiLi +
-                ", YZ=" + yanZhi +
-                ", MJ=" + minJie +
-                '}';
-    }
+    @Override public double XYRate() {return 0;}
+    @Override public double JGRate() {return 0;}
+    @Override public double CLRate() {return 0;}
+    @Override public double LXRate() {return 0;}
+    @Override public double NFRate() {return 0;}
+    @Override public double NZRate() {return 0;}
+    @Override public double DCRate() {return 0;}
+    @Override public double AARate() {return 0;}
 
 }
