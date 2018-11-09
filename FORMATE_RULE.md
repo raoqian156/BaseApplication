@@ -18,3 +18,10 @@ GridView|gv|ProgressBar|pb|SeekBar|sb|RadioButtion|rb
 CheckBox|cb|ScrollView|sv|LinearLayout|ll|FrameLayout|fl
 RelativeLayout|rl|Recyclerview|rv|WebView|web|VideoView|vv
 
+在确定控件只有点击事件的情况下可以用click_替换上述简称，
+
+5.图片类xml命名方式
+>1.select_ched_pres_<font color="#FF0000">c</font><font color="#F3B524">000000_ffffff<font>
+
+表示在 state_checked or state_pressed == true 为000<font color="#FF0000">颜色</font>（c->color  p->png  d->drawable）,
+<font color="#F3B524">000_fff 表示true ->000,若为000<font>
