@@ -25,3 +25,18 @@ RelativeLayout|rl|Recyclerview|rv|WebView|web|VideoView|vv
 
 表示在 state_checked or state_pressed == true 为000<font color="#FF0000">颜色</font>（c->color  p->png  d->drawable）,
 <font color="#F3B524">000_fff 表示true ->000,若为000<font>
+
+6.xml布局写法：没有内容的 控件 一定加上 调试内容
+```
+<View
+android:visibility="gone"
+tools:visibility="visible"/>
+
+<TextView
+...
+ tools:text="tv_id"/>
+
+<ImageView
+...
+ tools:src="@mipmap/default_cion"/>
+```
