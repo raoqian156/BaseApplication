@@ -40,3 +40,4 @@ tools:visibility="visible"/>
 ...
  tools:src="@mipmap/default_cion"/>
 ```
+7.所有的独立界面，如Activity、Fragment、Dialog、PopupWindow等，都建立一个无逻辑父类进行打印当前文件名以助于后期维护
