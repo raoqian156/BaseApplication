@@ -150,4 +150,56 @@ public class TLog {
             Log.e(tag, method + " : " + content);
         }
     }
+
+    /**
+     * 打印调用链 默认识别词 Base
+     * 用法：在工具类方法调用此方法即可打印出调用工具类的类信息以及调用的工具类方法位置
+     *
+     * @param show
+     */
+    public static void showUsingWhere(String... show) {
+        if (!DEBUG) {
+            return;
+        }
+        String tagStr;
+        if (show == null || show.length == 0) {
+            tagStr = "Base";
+        } else {
+            tagStr = show[0];
+        }
+        String[] contents = rqContent(tagStr);
+        if (contents == null) return;
+        String tag = contents[0];
+        String msg = contents[1];
+        String msg2 = contents[2];
+
+        Log.e(tag, msg);
+        Log.e(tag, "         " + msg2);
+    }
+
+    private static String[] rqContent(String tagStr) {
+        int index = 5;
+        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+        if (stackTrace == null || stackTrace.length <= index) {
+            return null;
+        }
+        String className = stackTrace[index].getFileName();
+        String methodName = stackTrace[index].getMethodName();
+        int lineNumber = stackTrace[index].getLineNumber();
+
+        String targetClassName = stackTrace[index - 1].getFileName();
+        String targetMethodName = stackTrace[index - 1].getMethodName();
+        int targetLineNumber = stackTrace[index - 1].getLineNumber();
+        String methodNameShort = methodName;
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("[ (").append(className).append(":").append(lineNumber).append(")#").append(methodNameShort).append(" ] ");
+
+        StringBuilder targetBuilder = new StringBuilder();
+        targetBuilder.append("use -> [ (").append(targetClassName).append(":").append(targetLineNumber - 1).append(")#").append(targetMethodName).append(" ] ");
+        String tag = (tagStr == null ? className : tagStr);
+        String headString = stringBuilder.toString();
+        String targetString = targetBuilder.toString();
+
+        return new String[]{tag, headString, targetString};
+    }
 }
