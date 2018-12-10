@@ -1,14 +1,8 @@
 package com.raoqian.mobprosaleapplication;
 
 import android.app.Activity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.raoqian.mobprosaleapplication.bean.BaseAdapter;
@@ -34,7 +28,8 @@ public class SizeAdapter extends BaseAdapter<SizeAdapter.SizeItemHolder, String>
 
     @Override
     public void onBindingHolder(SizeItemHolder holder, int position) {
-        holder.setData(getTagData());
+//        holder.setData(getTagData());
+        holder.show.setText(position + "     这是内容哼到手机打uhsfjshdfshdfhsudf ++++  " + position);
     }
 
     public List<ItemSpec> getTagData() {
@@ -75,73 +70,73 @@ public class SizeAdapter extends BaseAdapter<SizeAdapter.SizeItemHolder, String>
 
 
     class SizeItemHolder extends BaseHolder {
-        private ItemAdapter itemAdapter;
+        //        private ItemAdapter itemAdapter;
+        TextView show;
 
         public SizeItemHolder(View itemView) {
             super(itemView);
-            itemAdapter = new ItemAdapter(getContext());
-            RecyclerView recyclerView = itemView.findViewById(R.id.parentPanel);
-            LinearLayoutManager llm = new LinearLayoutManager(itemView.getContext());
-            llm.setOrientation(LinearLayoutManager.HORIZONTAL);
-            recyclerView.setLayoutManager(llm);
-            recyclerView.setAdapter(itemAdapter);
+            show = itemView.findViewById(R.id.input);
+//            itemAdapter = new ItemAdapter(getContext());
+//            RecyclerView recyclerView = itemView.findViewById(R.id.parentPanel);
+//            LinearLayoutManager llm = new LinearLayoutManager(itemView.getContext());
+//            llm.setOrientation(LinearLayoutManager.HORIZONTAL);
+//            recyclerView.setLayoutManager(llm);
+//            recyclerView.setAdapter(itemAdapter);
         }
 
         public void setData(List<ItemSpec> data) {
-            Log.e("TestActivity.LINE", "105data = " + data.size());
-            itemAdapter.setData(data);
         }
     }
 
-    class ItemAdapter extends BaseAdapter<ItemAdapter.InputListenerHolder, ItemSpec> {
-        public ItemAdapter(Activity context) {
-            super(context);
-        }
-
-        @Override
-        public InputListenerHolder onCreateHolder(ViewGroup parent, int viewType) {
-            return new InputListenerHolder(getView(R.layout.item_item_size_add, parent));
-        }
-
-        @Override
-        public void onBindingHolder(InputListenerHolder holder, int position) {
-            holder.remind.setText(getDataItem(position).specName);
-            holder.input.setHint(getDataItem(position).specName);
-            holder.input.setTag(position);
-        }
-
-        private void setInputContent(int position, String remind, String content) {
-            Log.e("TestActivity", "position = " + position + " remind = " + remind + " content = " + content);
-        }
-
-
-        class InputListenerHolder extends BaseHolder {
-            TextView remind;
-            EditText input;
-
-            public InputListenerHolder(View itemView) {
-                super(itemView);
-                remind = itemView.findViewById(R.id.remind);
-                input = itemView.findViewById(R.id.input);
-                input.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        if (s != null && s.toString().length() > 0) {
-                            setInputContent((Integer) input.getTag(), remind.getText().toString(), s.toString());
-                        }
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-
-                    }
-                });
-            }
-        }
-    }
+//    class ItemAdapter extends BaseAdapter<ItemAdapter.InputListenerHolder, ItemSpec> {
+//        public ItemAdapter(Activity context) {
+//            super(context);
+//        }
+//
+//        @Override
+//        public InputListenerHolder onCreateHolder(ViewGroup parent, int viewType) {
+//            return new InputListenerHolder(getView(R.layout.item_item_size_add, parent));
+//        }
+//
+//        @Override
+//        public void onBindingHolder(InputListenerHolder holder, int position) {
+//            holder.remind.setText(getDataItem(position).specName);
+////            holder.input.setHint(getDataItem(position).specName);
+////            holder.input.setTag(position);
+//        }
+//
+//        private void setInputContent(int position, String remind, String content) {
+//            Log.e("TestActivity", "position = " + position + " remind = " + remind + " content = " + content);
+//        }
+//
+//
+//        class InputListenerHolder extends BaseHolder {
+//            TextView remind;
+////            EditText input;
+//
+//            public InputListenerHolder(View itemView) {
+//                super(itemView);
+//                remind = itemView.findViewById(R.id.remind);
+////                input = itemView.findViewById(R.id.input);
+////                input.addTextChangedListener(new TextWatcher() {
+////                    @Override
+////                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+////
+////                    }
+////
+////                    @Override
+////                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+////                        if (s != null && s.toString().length() > 0) {
+////                            setInputContent((Integer) input.getTag(), remind.getText().toString(), s.toString());
+////                        }
+////                    }
+////
+////                    @Override
+////                    public void afterTextChanged(Editable s) {
+////
+////                    }
+////                });
+//            }
+//        }
+//    }
 }
