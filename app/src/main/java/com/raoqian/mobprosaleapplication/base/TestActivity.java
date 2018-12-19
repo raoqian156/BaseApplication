@@ -1,6 +1,5 @@
 package com.raoqian.mobprosaleapplication.base;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,11 +17,13 @@ import java.util.List;
 import static java.lang.Thread.sleep;
 
 /**
- * Created by Administrator on 2018/5/26.
+ * Created by Administrator on 2018/5/26
  */
 
-public class TestActivity extends Activity {
+public class TestActivity extends BaseActivity {
 
+    RecyclerView recyclerView;
+    BaseRecyclerAdapter mAdapter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,23 +32,14 @@ public class TestActivity extends Activity {
         initRecycler1();
     }
 
-    RecyclerView recyclerView;
-    BaseRecyclerAdapter mAdapter;
-
     private void initRecycler1() {
         recyclerView = findViewById(R.id.recycler);
-        LinearLayoutManager llm = new LinearLayoutManager(this) {
-
-            //            @Override
-//            public boolean canScrollVertically() {
-//                //解决ScrollView里存在多个RecyclerView时滑动卡顿的问题
-//                //如果你的RecyclerView是水平滑动的话可以重写canScrollHorizontally方法
-//                return false;
-//            }
-        };
+        LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(llm);
         SparseArray<Class<? extends BaseViewHolder>> maps = new SparseArray<>();
+
+
         maps.put(R.layout.item_spec_input, TestHolder.class);
         maps.put(R.layout.item_spec_input2, TestHolder2.class);
         mAdapter = new BaseRecyclerAdapter(this, maps) {

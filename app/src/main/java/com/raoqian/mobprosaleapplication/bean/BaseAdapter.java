@@ -6,16 +6,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public abstract class BaseAdapter<VH extends BaseHolder, D> extends RecyclerView.Adapter<VH> {
 
@@ -31,63 +27,34 @@ public abstract class BaseAdapter<VH extends BaseHolder, D> extends RecyclerView
     public BaseAdapter(Activity context, AdapterHelper helper) {
         mContext = context;
         mHelper = helper;
+        RecyclerHelper.init(this);
     }
 
-    /**
-     * RecyclerView 刷新不会保存Editext原有内容,需要在此确认需要保存,
-     *
-     * @param ids
-     */
-    protected void setKeepTextId(int... ids) {
-        this.saveContentIds = ids;
-        this.mOnContentKeeper = null;
+    public interface OnViewHolderAttachListener<VH extends BaseHolder> {
+        void onViewDetachedFromWindow(@NonNull VH holder);
+
+        void onViewAttachedToWindow(@NonNull VH holder);
     }
 
-    protected void setKeeper(OnContentKeeper onContentKeeper, int... ids) {
-        this.saveContentIds = ids;
-        this.mOnContentKeeper = onContentKeeper;
+    private OnViewHolderAttachListener mOnViewHolderAttachListener;
+
+    public void setOnViewHolderAttachListener(OnViewHolderAttachListener listener) {
+        mOnViewHolderAttachListener = listener;
     }
-
-    protected  interface OnContentKeeper<VH> {
-
-        Object onSave(VH holder, int saveContentId);
-
-        void onRelease(VH holder, Object o, int saveContentId);
-    }
-
-    private OnContentKeeper<VH> mOnContentKeeper;
-    private Map<String, Object> contentCash = new HashMap<>();
-    private int[] saveContentIds;
 
     @Override
     public void onViewDetachedFromWindow(@NonNull VH holder) {
-        if (saveContentIds != null && saveContentIds.length > 0) {
-            for (int saveContentId : saveContentIds) {
-                if (mOnContentKeeper == null) {
-                    contentCash.put(holder.getPosition() + "" + saveContentId, ((EditText) holder.getView(saveContentId)).getText().toString());
-                } else {
-                    contentCash.put(holder.getPosition() + "" + saveContentId, mOnContentKeeper.onSave(holder, saveContentId));
-                }
-            }
+        if (mOnViewHolderAttachListener != null) {
+            mOnViewHolderAttachListener.onViewDetachedFromWindow(holder);
         }
     }
 
     @Override
     public void onViewAttachedToWindow(@NonNull VH holder) {
-        if (saveContentIds != null && saveContentIds.length > 0) {
-            for (int saveContentId : saveContentIds) {
-                if (mOnContentKeeper == null) {
-                    ((TextView) holder.getView(saveContentId)).setText((String) contentCash.get(holder.getPosition() + "" + saveContentId));
-                } else {
-                    Object value = contentCash.get(holder.getPosition() + "" + saveContentId);
-                    if (value != null) {
-                        mOnContentKeeper.onRelease(holder, value, saveContentId);
-                    }
-                }
-            }
+        if (mOnViewHolderAttachListener != null) {
+            mOnViewHolderAttachListener.onViewAttachedToWindow(holder);
         }
     }
-
 
     public synchronized void setHeadTag(Integer... headTag) {
         if (headTag != null && headTag.length > 0) {

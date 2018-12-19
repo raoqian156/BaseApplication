@@ -5,6 +5,12 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_INTENT_SENDER_INTENT" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:name=".base.BaseApplication"
@@ -14,11 +20,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--<activity-->
-        <!--android:name=".HomeActivity"-->
-        <!--android:theme="@style/Fullscreen">-->
 
-        <!--</activity>-->
+        <!-- <activity -->
+        <!-- android:name=".HomeActivity" -->
+        <!-- android:theme="@style/Fullscreen"> -->
+
+
+        <!-- </activity> -->
         <activity android:name=".MainActivityCopy" />
         <activity
             android:name=".base.TestActivity"
@@ -26,22 +34,25 @@
             android:windowSoftInputMode="adjustNothing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<action android:name="android.intent.action.VIEW" />-->
+        <!-- <action android:name="android.intent.action.VIEW" /> -->
 
-        <!--<category android:name="android.intent.category.DEFAULT" />-->
-        <!--<category android:name="android.intent.category.BROWSABLE" />-->
-        <!--<data-->
-        <!--android:host="localhost"-->
-        <!--android:pathPrefix="/open"-->
-        <!--android:scheme="testapp" />-->
+
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+        <!-- <data -->
+        <!-- android:host="localhost" -->
+        <!-- android:pathPrefix="/open" -->
+        <!-- android:scheme="testapp" /> -->
         <activity
             android:name=".ui.StatusBarActivity"
-            android:theme="@style/Fullscreen">
-
-        </activity>
+            android:theme="@style/Fullscreen" />
+        <!--<activity-->
+        <!--android:name=".LoginActivity"-->
+        <!--android:label="@string/title_activity_login"></activity>-->
     </application>
 
 </manifest>
