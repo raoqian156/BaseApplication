@@ -5,13 +5,8 @@
     <string name="text_search">搜索</string>
 
 
-    <string name="title_activity_bottom_tab">Sign in</string>
     <string name="tip_main_tab1">首页</string>
     <string name="tip_main_tab2">资讯</string>
     <string name="tip_main_tab3">购物车</string>
     <string name="tip_main_tab4">我的</string>
-
-    <string name="tip_game_tab1">游戏主页</string>
-    <string name="tip_game_tab2">游戏设置</string>
-    <string name="tip_game_tab3">基础参数</string>
 </resources>

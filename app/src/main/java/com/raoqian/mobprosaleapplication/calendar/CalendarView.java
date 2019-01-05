@@ -96,7 +96,7 @@ public class CalendarView extends ViewGroup {
                 float rate = 0;//-0.25F * itemHeight * sHeight + 1 + 0.25F * itemHeight;
                 float p = (i * 1F / hang) * itemHeight;
                 int offsetY = (int) ((i / 5F) * itemHeight - rate * p);
-                int itemTop = Math.min(t + sHeight * i - offsetY, b - itemHeight);
+                int itemTop = t + sHeight * i - offsetY;
                 if (j == 0) {
                     Log.e("CalendarView", i +
                             "  pHeight -> " + pHeight + "  itemHeight = " + itemHeight +

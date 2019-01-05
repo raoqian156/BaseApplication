@@ -6,97 +6,108 @@
     android:orientation="vertical"
     android:padding="10dp">
 
-    <ImageView
+    <!--<com.raoqian.mobprosaleapplication.TestView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:focusable="true"-->
+    <!--android:focusableInTouchMode="true"-->
+    <!--android:layout_height="match_parent" />-->
+
+    <fragment
+        android:id="@+id/list_container"
+        class="com.raoqian.mobprosaleapplication.ui.HomeFragment"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="#000"
-        android:visibility="gone" />
+        android:layout_height="match_parent" />
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="100dp"-->
+    <!--android:background="#000"-->
+    <!--android:visibility="gone" />-->
 
-    <TextView
-        style="@style/RemindText"
-        android:paddingTop="10dp"
-        android:text="*商品名称"
-        android:visibility="gone" />
+    <!--<TextView-->
+    <!--style="@style/RemindText"-->
+    <!--android:paddingTop="10dp"-->
+    <!--android:text="*商品名称"-->
+    <!--android:visibility="gone" />-->
 
-    <EditText
-        style="@style/RemindInput"
-        android:hint="请输入商品名称"
-        android:visibility="gone" />
+    <!--<EditText-->
+    <!--style="@style/RemindInput"-->
+    <!--android:hint="请输入商品名称"-->
+    <!--android:visibility="gone" />-->
 
-    <TextView
-        style="@style/RemindText"
-        android:text="*商品描述"
-        android:visibility="gone" />
+    <!--<TextView-->
+    <!--style="@style/RemindText"-->
+    <!--android:text="*商品描述"-->
+    <!--android:visibility="gone" />-->
 
-    <EditText
-        style="@style/RemindInput"
-        android:hint="请输入商品描述"
-        android:visibility="gone" />
+    <!--<EditText-->
+    <!--style="@style/RemindInput"-->
+    <!--android:hint="请输入商品描述"-->
+    <!--android:visibility="gone" />-->
 
-    <TextView
-        style="@style/RemindText"
-        android:text="*商品一级分类"
-        android:visibility="gone" />
+    <!--<TextView-->
+    <!--style="@style/RemindText"-->
+    <!--android:text="*商品一级分类"-->
+    <!--android:visibility="gone" />-->
 
-    <EditText
-        style="@style/RemindInput"
-        android:hint="请选择一级分类"
-        android:visibility="gone" />
+    <!--<EditText-->
+    <!--style="@style/RemindInput"-->
+    <!--android:hint="请选择一级分类"-->
+    <!--android:visibility="gone" />-->
 
-    <TextView
-        style="@style/RemindText"
-        android:text="商品二级分类"
-        android:visibility="gone" />
+    <!--<TextView-->
+    <!--style="@style/RemindText"-->
+    <!--android:text="商品二级分类"-->
+    <!--android:visibility="gone" />-->
 
-    <EditText
-        style="@style/RemindInput"
-        android:hint="请选择二级分类"
-        android:visibility="gone" />
+    <!--<EditText-->
+    <!--style="@style/RemindInput"-->
+    <!--android:hint="请选择二级分类"-->
+    <!--android:visibility="gone" />-->
 
-    <TextView
-        style="@style/RemindText"
-        android:text="展示图片列表"
-        android:visibility="gone" />
+    <!--<TextView-->
+    <!--style="@style/RemindText"-->
+    <!--android:text="展示图片列表"-->
+    <!--android:visibility="gone" />-->
 
-    <TextView
-        style="@style/RemindText"
-        android:layout_height="100dp"
-        android:gravity="center"
-        android:text="横划图片列表,可添加"
-        android:visibility="gone" />
+    <!--<TextView-->
+    <!--style="@style/RemindText"-->
+    <!--android:layout_height="100dp"-->
+    <!--android:gravity="center"-->
+    <!--android:text="横划图片列表,可添加"-->
+    <!--android:visibility="gone" />-->
 
-    <TextView
-        style="@style/RemindText"
-        android:text="商品详情" />
+    <!--<TextView-->
+    <!--style="@style/RemindText"-->
+    <!--android:text="商品详情" />-->
 
-    <EditText
-        style="@style/RemindInput"
-        android:hint="本区域为图文混排区域,样式待定" />
+    <!--<EditText-->
+    <!--style="@style/RemindInput"-->
+    <!--android:hint="本区域为图文混排区域,样式待定" />-->
 
-    <TextView
-        style="@style/RemindText"
-        android:text="可选商品规格" />
+    <!--<TextView-->
+    <!--style="@style/RemindText"-->
+    <!--android:text="可选商品规格" />-->
 
-    <EditText
-        style="@style/RemindInput"
-        android:hint="如:''颜色,大小,尺寸''" />
+    <!--<EditText-->
+    <!--style="@style/RemindInput"-->
+    <!--android:hint="如:''颜色,大小,尺寸''" />-->
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="sure"
-        android:text="确定规格" />
+    <!--<Button-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:onClick="sure"-->
+    <!--android:text="确定规格" />-->
 
-    <com.raoqian.mobprosaleapplication.base.recycler.RecycView
-        android:id="@+id/recycler"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+    <!--<com.raoqian.mobprosaleapplication.base.recycler.RecycView-->
+    <!--android:id="@+id/recycler"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="1" />-->
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="addData"
-        android:text="增加不同规格产品" />
+    <!--<Button-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:onClick="addData"-->
+    <!--android:text="增加不同规格产品" />-->
 
 </LinearLayout><!--</ScrollView>-->

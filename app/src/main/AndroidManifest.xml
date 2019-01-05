@@ -29,7 +29,7 @@
         <!-- </activity> -->
         <activity android:name=".MainActivityCopy" />
         <activity
-            android:name=".base.TestActivity"
+            android:name=".CalendarTestActivity"
             android:theme="@style/Fullscreen"
             android:windowSoftInputMode="adjustNothing">
             <intent-filter>

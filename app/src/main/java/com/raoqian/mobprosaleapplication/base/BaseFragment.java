@@ -30,7 +30,6 @@ public abstract class BaseFragment extends Fragment implements FragmentUserVisib
 
     protected static String DATA = "Fragment.pass.data";
     FragmentUserVisibleController userVisibleController;
-
     public BaseFragment() {
         userVisibleController = new FragmentUserVisibleController(this, this);
     }

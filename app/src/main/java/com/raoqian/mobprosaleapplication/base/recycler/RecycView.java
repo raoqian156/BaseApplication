@@ -12,7 +12,7 @@ import android.view.View;
  * Created by rq on 2018/10/8.
  */
 
-public class RecycView extends RecyclerView implements View.OnTouchListener, BaseRecyclerAdapter.OnAttachedToBottomListener {
+public class RecycView extends RecyclerView implements View.OnTouchListener, CommentRecyclerAdapter.OnAttachedToBottomListener {
     public RecycView(Context context) {
         super(context);
         setOnTouchListener(this);
@@ -32,8 +32,8 @@ public class RecycView extends RecyclerView implements View.OnTouchListener, Bas
     @Override
     public void setAdapter(Adapter adapter) {
         super.setAdapter(adapter);
-        if (adapter instanceof BaseRecyclerAdapter) {
-            ((BaseRecyclerAdapter) adapter).setOnAttachedToBottomListener(this);
+        if (adapter instanceof CommentRecyclerAdapter) {
+            ((CommentRecyclerAdapter) adapter).setOnAttachedToBottomListener(this);
         }
     }
 

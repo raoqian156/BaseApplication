@@ -51,6 +51,12 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     protected void initView(View view) {
+        if (getArguments() != null) {
+            boolean test = (boolean) getArguments().get("test");
+            Log.e("HomeFragment", "initView: test = " + test);
+        } else {
+            Log.e("HomeFragment", "initView: test.getArguments = null");
+        }
 //        StatusBarUtil.setTranslucentForImageViewInFragment(getActivity(), view);
 //        ViewUtils.inject(this, view);
         view.findViewById(R.id.click1).setOnClickListener(this);

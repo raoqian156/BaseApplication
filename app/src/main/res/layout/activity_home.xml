@@ -49,7 +49,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/show22"
+                    android:drawableTop="@drawable/n_show22"
                     android:gravity="center_horizontal"
                     android:text="内配"
                     android:textColor="@android:color/black" />
@@ -59,7 +59,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/show22"
+                    android:drawableTop="@drawable/n_show22"
                     android:gravity="center_horizontal"
                     android:text="内配2"
                     android:textColor="@android:color/black" />
@@ -69,7 +69,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/show22"
+                    android:drawableTop="@drawable/n_show22"
                     android:gravity="center_horizontal"
                     android:text="内配3"
                     android:textColor="@android:color/black" />
@@ -79,7 +79,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/show22"
+                    android:drawableTop="@drawable/n_show22"
                     android:gravity="center_horizontal"
                     android:text="内配4"
                     android:textColor="@android:color/black" />
@@ -97,7 +97,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/show22"
+                    android:drawableTop="@drawable/n_show22"
                     android:gravity="center_horizontal"
                     android:text="内配"
                     android:textColor="@android:color/black" />
@@ -106,7 +106,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/show22"
+                    android:drawableTop="@drawable/n_show22"
                     android:gravity="center_horizontal"
                     android:text="内配"
                     android:textColor="@android:color/black" />
@@ -115,7 +115,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/show22"
+                    android:drawableTop="@drawable/n_show22"
                     android:gravity="center_horizontal"
                     android:text="内配"
                     android:textColor="@android:color/black" />
@@ -124,7 +124,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawableTop="@drawable/show22"
+                    android:drawableTop="@drawable/n_show22"
                     android:gravity="center_horizontal"
                     android:text="内配"
                     android:textColor="@android:color/black" />
@@ -150,7 +150,6 @@
         tools:background="#aaa">
 
         <ImageView
-            android:id="@+id/menu_top"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:paddingLeft="10dp"

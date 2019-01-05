@@ -157,15 +157,16 @@ public class TLog {
      *
      * @param show
      */
-    public static void showUsingWhere(String... show) {
+    public static void showUsingWhere(Object... show) {
         if (!DEBUG) {
             return;
         }
-        String tagStr;
+        String tagStr = "Base";
+        int addIndex = 0;
         if (show == null || show.length == 0) {
-            tagStr = "Base";
-        } else {
-            tagStr = show[0];
+
+        } else if (show[0] instanceof String) {
+            tagStr = (String) show[0];
         }
         String[] contents = rqContent(tagStr);
         if (contents == null) return;
